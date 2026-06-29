@@ -1,10 +1,20 @@
-[← Lesson 2](../02-skills-and-design-system/Readme.md) | **Lesson 3** | [Lesson 4 →](../04-building-the-application/readme.md)
+[← Back to Lab 1 Overview](../readme.md)
+
+[← Lesson 2](../02-skills-and-design-system/readme.md) | **Lesson 3**
 
 ---
 
 # Lesson 3 — Engineering Planning
 
 ![images](./images/banner.png)
+
+## What You Need Before Starting
+
+- Lessons 1 and 2 finished
+- Claude Code installed and able to run (`claude` in a terminal opens it) — see [Getting Started](../../00-Getting-Started/readme.md) if not
+- 20–30 minutes, most of it spent waiting for Claude to think — you don't need to actively do anything during that time
+
+---
 
 ## Where We Are
 
@@ -15,7 +25,7 @@ By this point you have:
 
 Now you are going to use the AI to turn that PRD into a concrete engineering plan. Before a single line of application code is written, you need a document that answers: *What are we building, how is it structured, and in what order does it get built?*
 
-This lesson introduces **Plan Mode** — one of the most powerful features in Claude Code — and walks you through running the `/plan` command to produce the engineering documents that all future lessons depend on.
+This lesson introduces **Plan Mode** — one of the most powerful features in Claude Code — and walks you through running the `/plan` command to produce the engineering documents that all of Lab 2 (Building the Application) depends on.
 
 ---
 
@@ -108,7 +118,7 @@ Copy and paste the following prompt into the Claude Code terminal:
 /plan Create an end-to-end engineering document based on the provided @docs/ContractIQ_PRD.md. Your task is to meticulously extract all features and specifications from the PRD and translate them into detailed engineering design elements. Use the @skills/engineering-planner/SKILL.md for creating the doc.
 ```
 
-Press **Enter**. 
+Press **Enter**.
 
 ![images](./images/4.png)
 
@@ -119,7 +129,7 @@ Press **Enter**.
 
 ---
 
-> **Note:** This step can take 10–15 minutes. Let Claude finish without interrupting till then let's dicuss about "@" in claude .
+> **Note:** This step can take 10–15 minutes. Let Claude finish without interrupting — in the meantime, let's discuss the `@` symbol in Claude.
 
 ![images](./images/meme.png)
 
@@ -172,7 +182,7 @@ After Claude processes the PRD through the engineering-planner skill, it will ge
 - **Feature Breakdown** — Each PRD feature mapped to the specific components, database tables, and API routes required to build it.
 - **Build Sequence** — The order in which features should be built so each stage produces something working before the next one starts.
 
-These documents are saved to `docs/engineering/` and become the input for Lesson 4, where you run `/implementation-specs` to break each engineering decision into file-by-file build instructions.
+These documents are saved to `docs/engineering/` and become the input for Lab 2, where you run `/implementation-specs` to break each engineering decision into file-by-file build instructions.
 
 ![images](./images/6.png)
 
@@ -212,7 +222,7 @@ These files are the technical foundation for everything that follows. Every futu
 
 ## The Stage-Gated Principle
 
-Each lesson in this course follows the same pattern:
+Each lesson in this lab — and the two labs that follow it — follows the same pattern:
 
 1. You run a command
 2. Claude produces output for your review
@@ -229,9 +239,23 @@ This is intentional. Real software projects fail when decisions are made without
 - **`@` file references in practice** — pointing a prompt at `@docs/ContractIQ_PRD.md` and `@skills/engineering-planner/SKILL.md` grounds Claude's output in your specific documents rather than generic templates.
 - **What a complete engineering plan contains** — architecture overview, data models, API design, feature-to-component mapping, and a build sequence that produces something usable at each stage.
 - **How to review a plan before approving** — checking that every PRD feature has a corresponding backend step, that the data model captures all the information the app needs to store, and that the build order is logically sequenced.
-- **The stage-gated principle in action** — the engineering documents saved to `docs/engineering/` become the direct input for Lesson 4's implementation prompts; each stage depends on the previous one being correct.
-- **Why catching gaps at the plan stage matters** — a missing table or a circular dependency in the build order is trivial to fix in a document and very expensive to fix after three lessons of code have been written on top of it.
+- **The stage-gated principle in action** — the engineering documents saved to `docs/engineering/` become the direct input for Lab 2's implementation prompts; each stage depends on the previous one being correct.
+- **Why catching gaps at the plan stage matters** — a missing table or a circular dependency in the build order is trivial to fix in a document and very expensive to fix after several lessons of code have been written on top of it.
 
 ---
 
-[← Lesson 2](../02-skills-and-design-system/Readme.md) | **Lesson 3** | [Lesson 4 →](../04-building-the-application/readme.md)
+## This Lab Is Complete
+
+You now have everything Lab 2 needs:
+
+- A local clone of `dev-os`, open in VS Code
+- An understanding of the five skills and the design system
+- `docs/engineering/engineering-doc.md` and `docs/engineering/implementation-specs.md`
+
+Continue to **[Lab 2 — Building the Application](../../02-Building-the-Application-Lab/readme.md)**, where you'll scaffold the Next.js app, set up Supabase, and implement everything end to end.
+
+---
+
+[← Back to Lab 1 Overview](../readme.md)
+
+[← Lesson 2](../02-skills-and-design-system/readme.md) | **Lesson 3** | [Continue to Lab 2 →](../../02-Building-the-Application-Lab/readme.md)

@@ -1,19 +1,26 @@
-[← Lesson 4](../04-building-the-application/readme.md) | **Lesson 5** | [Lesson 6 →](../06-security-and-production/readme.md)
+[← Back to Lab 2 Overview](../readme.md)
+
+[← Lesson 1](../01-building-the-application/readme.md) | **Lesson 2**
 
 ---
 
-# Lesson 5 — Memory Layer
+# Lesson 2 — Memory Layer
 
-![images](./Images/banner.png)
+![images](./images/banner.png)
+
+## What You Need Before Starting
+
+- Lesson 1 finished, with your app running at `http://localhost:3000` and able to upload and analyze a contract
+- 20–30 minutes
+
+---
 
 ## Where We Are
 
 By this point you have:
 
-- **Lesson 1** — Forked the `dev-os` starter repo, cloned it to your machine, and opened it in VS Code.
-- **Lesson 2** — Explored the five skills and reviewed the design system in `docs/design.md`.
-- **Lesson 3** — Used Plan Mode to run `/engineering-planner` and `/implementation-specs`, producing the engineering documents in `docs/engineering/`.
-- **Lesson 4** — Scaffolded the Next.js project, implemented the application, ran the database schema in Supabase, and confirmed the app loads in a browser.
+- **Lab 1** — Forked the `dev-os` starter repo, explored the skills and design system, and produced the engineering documents in `docs/engineering/`.
+- **Lab 2, Lesson 1** — Scaffolded the Next.js project, implemented the application, ran the database schema in Supabase, and confirmed the app loads in a browser.
 
 Now you are going to give the assistant a memory. Currently every time a user sends a message, a new session is created — the assistant has no idea what was said before, what contract was uploaded, or what questions were already asked. This lesson fixes that.
 
@@ -37,7 +44,7 @@ The assistant has no idea what it just told you. It cannot answer the follow-up 
 
 This is the problem memory solves.
 
-![image](./Images/1.png)
+![image](./images/1.png)
 
 ---
 
@@ -107,9 +114,9 @@ Turn 2: "Summarise what you just said"     →  API call (contract text + Turn 1
 
 ---
 
-## Step 1 — Open a Claude Code Session
+## Step 1 — Open Claude Code in VS Code
 
-Open a terminal in VS Code and navigate to your project folder. Start Claude Code:
+Open your project folder in **VS Code**, open the integrated terminal (**Terminal > New Terminal**), and start the Claude Code CLI:
 
 ```bash
 claude
@@ -119,7 +126,7 @@ claude
 
 ## Step 2 — Run the Memory Layer Prompt
 
-Copy and paste the following prompt into the Claude Code session:
+Copy and paste the following prompt into the same Claude Code terminal session:
 
 ```
 Implement a Conversation Memory Layer for the ContractIQ chat system.
@@ -228,7 +235,7 @@ Open the app and go to the chat interface for any previously uploaded contract. 
 
 If Turn 3 fails (history does not reload), check that the `chat_messages` Supabase write is completing without error. Open the browser dev console and look for a failed fetch.
 
-![image](./Images/2.png)
+![image](./images/2.png)
 
 ---
 
@@ -262,7 +269,7 @@ If something is broken or not working as expected, you do not need to debug it m
 
 ### How to Use These Prompts
 
-1. Open a Claude Code session in your project root: `claude`
+1. Open a terminal in VS Code and start a Claude Code session in your project root: `claude`
 2. Copy the prompt for your error and paste it in — do not paraphrase it
 3. Approve the changes Claude proposes and re-test
 
@@ -340,4 +347,14 @@ I want to add [describe the feature] to the ContractIQ chat. The existing memory
 
 ---
 
-[← Lesson 4](../04-building-the-application/readme.md) | **Lesson 5** | [Lesson 6 →](../06-security-and-production/readme.md)
+## This Lab Is Complete
+
+Your application now works end to end on `http://localhost:3000`: a Next.js frontend, a live Supabase database, authentication, the core ContractIQ feature set, and a chat assistant with real memory.
+
+It is **not yet secure for production and not yet on the internet**. Continue to **[Lab 3 — Security & Deployment](../../03-Security-and-Deployment-Lab/readme.md)** to fix common vulnerabilities and ship it live.
+
+---
+
+[← Back to Lab 2 Overview](../readme.md)
+
+[← Lesson 1](../01-building-the-application/readme.md) | **Lesson 2** | [Continue to Lab 3 →](../../03-Security-and-Deployment-Lab/readme.md)

@@ -1,10 +1,22 @@
-**Lesson 1** | [Lesson 2 →](../02-skills-and-design-system/Readme.md)
+[← Back to Lab 1 Overview](../readme.md)
+
+**Lesson 1** | [Lesson 2 →](../02-skills-and-design-system/readme.md)
 
 ---
 
 # Lesson 1 — Project Foundation
 
 ![images](./images/banner.png)
+
+## What You Need Before Starting
+
+- A free **GitHub account** (sign up at [github.com/signup](https://github.com/signup) if you don't have one)
+- **Git** and **VS Code** installed — see [Getting Started](../../00-Getting-Started/readme.md) if you skipped that
+- About 15 minutes
+
+If any word below (terminal, fork, clone, repository) is unfamiliar, check the [Glossary in Getting Started](../../00-Getting-Started/readme.md#glossary--every-term-used-in-this-course) — every term in this course is defined there in plain English.
+
+---
 
 ## The Problem We Are Solving
 
@@ -26,9 +38,9 @@ The tool does not replace a lawyer for high-stakes situations. It gives people e
 
 ## Step 1 — Fork the Starter Repository
 
-We are not starting from a blank folder. A starter repository has already been set up with the project structure, configuration files, and workflow rules you will need throughout this course.
+We are not starting from a blank folder. Somebody has already set up a starter project — folders, settings, and rules — that you'll build on top of, instead of starting from nothing.
 
-Go to this URL in your browser: [https://github.com/sachin0034-tech/dev-os](https://github.com/sachin0034-tech/dev-os)
+Open your web browser and go to this address: [https://github.com/sachin0034-tech/dev-os](https://github.com/sachin0034-tech/dev-os)
 
 ![images](./images/1.png)
 
@@ -44,17 +56,19 @@ Forking creates your own copy of the repository under your GitHub account. This 
 
 ## Step 2 — Clone Your Fork to Your Computer
 
-Once the fork is created, GitHub will take you to your copy of the repository. Click the green **Code** button, make sure **HTTPS** is selected, and copy the URL shown.
+Once the fork is created, GitHub takes you to your copy of the repository. Click the green **Code** button, make sure **HTTPS** is selected, and click the little copy icon next to the web address shown — this copies that address so you can paste it in the next step.
 
 ![images](./images/4.png)
 
-Open your terminal and run:
+Open a terminal (see [Getting Started](../../00-Getting-Started/readme.md#opening-a-terminal-inside-vs-code) if you're not sure how) and type the following, but **replace the placeholder with the address you just copied**:
 
 ```bash
 git clone <paste the URL you copied here>
 ```
 
-Cloning downloads the repository from GitHub onto your local machine. From this point on, you work on the local copy and push changes back to GitHub when you are ready.
+For example, if your copied address were `https://github.com/yourname/dev-os.git`, you'd type `git clone https://github.com/yourname/dev-os.git` and press **Enter**.
+
+This downloads ("clones") the repository from GitHub onto your own computer, into a new folder called `dev-os`. From this point on, you work on this local copy and push changes back up to GitHub when you're ready.
 
 ![images](./images/5.png)
 
@@ -102,7 +116,7 @@ This is the instruction manual for your AI coding assistant, Claude Code. It def
 The design system for ContractIQ — the colors, fonts, spacing rules, and component patterns that every page in the app will follow. When Claude builds a new screen, it refers here first so the product looks and feels consistent without you having to describe the style every time.
 
 **`docs/ContractIQ_PRD.md`**
-The Product Requirements Document — the same document you have been reading in this lesson. It defines the problem, the users, the features, the database schema, the pricing, and the metrics. Every technical decision in this course traces back to something in this file.
+The Product Requirements Document — the same document you have been reading in this lesson. It defines the problem, the users, the features, the database schema, the pricing, and the metrics. Every technical decision in this lab traces back to something in this file.
 
 **`skills/engineering-planner/SKILL.md`**
 A custom slash command for Claude Code. When you run `/engineering-planner`, Claude reads the PRD and produces a set of engineering documents — architecture decisions, data models, API contracts — that translate the product vision into a technical plan.
@@ -111,19 +125,19 @@ A custom slash command for Claude Code. When you run `/engineering-planner`, Cla
 The next step after engineering planning. Running `/implementation-specs` takes those engineering documents and breaks them down into granular, file-by-file implementation instructions, including the complete SQL file needed to set up the database.
 
 **`skills/security-foundation/SKILL.md`**
-Runs after the specs are written. It audits the planned implementation for security gaps — missing Row Level Security policies, exposed API keys, unsigned URLs — and produces a checklist of controls that must be in place before any code ships.
+Used in Lab 3. It audits the planned implementation for security gaps — missing Row Level Security policies, exposed API keys, unsigned URLs — and produces a checklist of controls that must be in place before any code ships.
 
 **`skills/frontend-setup/SKILL.md`**
-Scaffolds the Next.js 14 project with the right folder structure, dependencies, and configuration. Running this skill creates the skeleton of the application you will build into over the coming lessons.
+Used in Lab 2. Scaffolds the Next.js 14 project with the right folder structure, dependencies, and configuration. Running this skill creates the skeleton of the application you will build into over the coming lessons.
 
 **`skills/design-system/SKILL.md`**
-Applied throughout all frontend work. It enforces the rules in `design.md` at the component level — making sure buttons, cards, and layouts match the design system without requiring you to manually check every file.
+Applied throughout all frontend work in Lab 2. It enforces the rules in `design.md` at the component level — making sure buttons, cards, and layouts match the design system without requiring you to manually check every file.
 
 ---
 
-Each lesson in this course follows a stage-gated flow: you run a skill, review what Claude produces, and move to the next stage only when the output looks right. The skills directory is the engine that drives that flow.
+Each lesson in this lab — and the labs that follow it — works the same way: you run a skill, review what Claude produces, and move to the next stage only when the output looks right. The skills directory is the engine that drives that flow.
 
-In the next lesson, you will run the first skill — `/engineering-planner` — and turn the PRD into a concrete technical plan.
+In the next lesson, you will explore all five skills in detail and review the design system before turning the PRD into a concrete technical plan.
 
 ---
 
@@ -138,4 +152,6 @@ In the next lesson, you will run the first skill — `/engineering-planner` — 
 
 ---
 
-**Lesson 1** | [Lesson 2 →](../02-skills-and-design-system/Readme.md)
+[← Back to Lab 1 Overview](../readme.md)
+
+**Lesson 1** | [Lesson 2 →](../02-skills-and-design-system/readme.md)

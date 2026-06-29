@@ -1,20 +1,29 @@
-[← Lesson 5](../05-memory-layer/readme.md) | **Lesson 6** | [Lesson 7 →](../07-deployment/readme.md)
+[← Back to Lab 3 Overview](../readme.md)
+
+**Lesson 1** | [Lesson 2 →](../02-deployment/readme.md)
 
 ---
 
-# Lesson 6 — Security Foundation
+# Lesson 1 — Security Foundation
 
-![images](./images/banner.png)
+<!-- 📸 Add a banner screenshot here as ./images/banner.png and uncomment the line below.
+     Suggested shot: the Claude Code terminal mid-way through a /security-fix run, showing
+     the checklist of issues being found and fixed.
+![images](./images/banner.png) -->
+
+## What You Need Before Starting
+
+- All of Lab 2 finished, with your app running locally and working end to end
+- 15–20 minutes — this lesson is one prompt and a review, not new building
+
+---
 
 ## Where We Are
 
-By this point you have:
+By this point you have completed **Lab 1 — Planning & Architecture** and **Lab 2 — Building the Application**:
 
-- **Lesson 1** — Forked the `dev-os` starter repo, cloned it to your machine, and opened it in VS Code.
-- **Lesson 2** — Explored the five skills and reviewed the design system in `docs/design.md`.
-- **Lesson 3** — Used Plan Mode to run `/engineering-planner` and `/implementation-specs`, producing the engineering documents in `docs/engineering/`.
-- **Lesson 4** — Scaffolded the Next.js project, implemented the application, ran the database schema in Supabase, and confirmed the app loads in a browser.
-- **Lesson 5** — Added a memory layer so the assistant can recall conversation history within and across sessions.
+- Forked the `dev-os` starter repo, explored the skills and design system, and produced the engineering documents in `docs/engineering/`.
+- Scaffolded the Next.js project, implemented the application, ran the database schema in Supabase, and added a memory layer so the assistant can recall conversation history within and across sessions.
 
 You now have a fully working application. The next question is: **is it safe to ship?**
 
@@ -60,9 +69,9 @@ At the end, the skill presents a summary table showing the status and changed fi
 
 ---
 
-## Step 1 — Open a Claude Code Session
+## Step 1 — Open Claude Code in VS Code
 
-Open a terminal in VS Code and navigate to your project folder. Start Claude Code:
+Open your project folder in **VS Code**, open the integrated terminal (**Terminal > New Terminal**, or `` Ctrl+` ``), and start the Claude Code CLI:
 
 ```bash
 claude
@@ -72,7 +81,7 @@ claude
 
 ## Step 2 — Run the Security Fix Skill
 
-Copy and paste the following prompt into the Claude Code session:
+Copy and paste the following prompt into the same Claude Code terminal session:
 
 ```
 Use @skills/security-fix/SKILL.md to scan the codebase and fix all security issues.
@@ -81,6 +90,9 @@ Use @skills/security-fix/SKILL.md to scan the codebase and fix all security issu
 Press **Enter** and let the skill run.
 
 > **Note:** The skill applies fixes automatically. Review each diff before approving. Pay attention to any items listed under **Manual Actions Required** at the end — these are issues the skill found but could not fix automatically.
+
+<!-- 📸 Optional: capture the skill's final summary table as ./images/1.png and reference it
+     here with ![Summary table](./images/1.png) -->
 
 ---
 
@@ -116,7 +128,10 @@ Walk through this verification sequence:
 | No secrets in page source | View page source in the browser and search for your API key value | Key is not present |
 | `.gitignore` covers env files | Run `git status` — `.env.local` should not appear as untracked | File is ignored |
 
-If any test fails, paste the description into Claude Code and it will diagnose and fix the specific issue.
+<!-- 📸 Optional: capture the DevTools Response Headers panel showing the new security
+     headers as ./images/2.png and reference it here with ![Security headers](./images/2.png) -->
+
+If any test fails, paste the description into the Claude Code terminal and it will diagnose and fix the specific issue.
 
 ---
 
@@ -145,7 +160,7 @@ At the end of this lesson your application has:
 
 ## Troubleshooting — Let Claude Fix It
 
-If a security fix breaks something or a check did not apply correctly, paste the issue into Claude Code using one of the prompts below.
+If a security fix breaks something or a check did not apply correctly, paste the issue into the Claude Code terminal using one of the prompts below.
 
 ---
 
@@ -189,4 +204,6 @@ The security-fix skill flagged this as a manual action required: [paste the item
 
 ---
 
-[← Lesson 5](../05-memory-layer/readme.md) | **Lesson 6** | [Lesson 7 →](../07-deployment/readme.md)
+[← Back to Lab 3 Overview](../readme.md)
+
+**Lesson 1** | [Lesson 2 →](../02-deployment/readme.md)
