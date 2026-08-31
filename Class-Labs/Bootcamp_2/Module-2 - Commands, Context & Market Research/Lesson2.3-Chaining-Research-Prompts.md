@@ -272,7 +272,7 @@ Step 5: @final report + @CLAUDE.md → append intelligence → loads every sessi
 Once Stage 4 is saved, run this prompt to update your project CLAUDE.md. Replace `<your-stage1-filename>` with the actual filename:
 
 ```
-@<your-stage1-filename>.md
+@<your-stage4-filename>.md
 @./CLAUDE.md
 
 Read the market research report and the current CLAUDE.md above.
